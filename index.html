@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Pesca del Campeón · Pescados y mariscos al por mayor</title>
+<meta name="description" content="Pescado fresco del día, fileteado por maestros y entregado al por mayor a restaurantes de Santiago. Directo del terminal pesquero, sin intermediarios.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#top" class="nav__brand">
+    <img src="images/logo.png" width="48" height="48" alt="" class="nav__logo">
+    <span class="nav__title">La Pesca del Campeón</span>
+  </a>
+  <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+  </button>
+  <div class="nav__links" id="navLinks">
+    <a href="#top">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#especies">Especies</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#" class="btn btn--wa" id="waLinkNav" target="_blank" rel="noopener">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.6-1.3.1-.2 0-.4 0-.5l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.7 4.3 3.8 1.6.7 2.2.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3Z"></path></svg>
+      Cotizar
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="top" class="hero">
+  <div class="hero__video-bg" aria-hidden="true">
+    <video class="hero__video" muted loop playsinline preload="none">
+      <source data-src="videos/hero-video.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero__video-overlay"></div>
+  <div class="hero__inner">
+    <p class="eyebrow eyebrow--pill"><span class="dot"></span>Terminal Pesquero Metropolitano · Santiago</p>
+    <h1 class="hero__title">Del terminal pesquero <span class="accent">a tu cocina</span></h1>
+    <p class="hero__lead">Pescado fresco del día, fileteado por maestros y entregado al por mayor a restaurantes de Santiago. Directo del bote, sin intermediarios.</p>
+    <div class="hero__ctas">
+      <a href="#" class="btn btn--primary" id="waLinkHero" target="_blank" rel="noopener">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.6-1.3.1-.2 0-.4 0-.5l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.7 4.3 3.8 1.6.7 2.2.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3Z"></path></svg>
+        Solicitar cotización
+      </a>
+      <a href="#servicios" class="btn btn--outline">Ver servicios</a>
+    </div>
+    <div class="hero__tags">
+      <span><span class="dot dot--orange"></span>Fresco todos los días</span>
+      <span><span class="dot dot--orange"></span>Fileteado a pedido</span>
+      <span><span class="dot dot--orange"></span>Reparto a restaurantes</span>
+    </div>
+  </div>
+  <div class="hero__wave">
+    <div class="hero__wave-track">
+      <svg width="100%" height="100%" viewBox="0 0 880 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 45 Q55 22 110 45 T220 45 T330 45 T440 45 T550 45 T660 45 T770 45 T880 45 V80 H0 Z" fill="#031224"></path></svg>
+    </div>
+  </div>
+</header>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="section section--alt">
+  <div class="section__inner">
+    <p class="eyebrow eyebrow--orange">Lo que hacemos</p>
+    <h2 class="section__title">Nuestros servicios</h2>
+    <div class="grid grid--services" id="servicesGrid"></div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="section">
+  <div class="section__inner">
+    <p class="eyebrow eyebrow--orange">Simple y directo</p>
+    <h2 class="section__title">Cómo trabajamos</h2>
+    <div class="grid grid--steps" id="stepsGrid"></div>
+  </div>
+</section>
+
+<!-- ESPECIES / CATÁLOGO -->
+<section id="especies" class="section section--alt">
+  <div class="section__inner">
+    <p class="eyebrow eyebrow--orange">Del día, según temporada</p>
+    <h2 class="section__title section__title--tight">Catálogo de especies</h2>
+    <p class="section__lead">Disponibilidad sujeta a la pesca del día. Consulta por WhatsApp el stock y precios de la mañana.</p>
+    <div class="filters" id="filters" role="group" aria-label="Filtrar especies por corte"></div>
+    <div class="grid grid--species" id="speciesGrid"></div>
+  </div>
+</section>
+
+<!-- CONFIANZA -->
+<section class="section section--stats">
+  <div class="section__inner grid grid--stats" id="statsGrid"></div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="section section--alt section--contact">
+  <div class="section__inner contact-grid">
+    <div>
+      <p class="eyebrow eyebrow--orange">Hablemos</p>
+      <h2 class="section__title">Cotiza para tu restaurante</h2>
+      <p class="section__lead">Cuéntanos qué especies necesitas, formato de corte y volumen semanal. Te respondemos con precios del día en minutos.</p>
+      <a href="#" class="btn btn--primary" id="waLinkContact" target="_blank" rel="noopener">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.6-1.3.1-.2 0-.4 0-.5l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.7 4.3 3.8 1.6.7 2.2.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3Z"></path></svg>
+        Escríbenos por WhatsApp
+      </a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card__row">
+        <span class="contact-card__label">WhatsApp / Teléfono</span>
+        <a href="tel:+56953221506" class="contact-card__value contact-card__value--link">+56 9 5322 1506</a>
+      </div>
+      <div class="contact-card__row">
+        <span class="contact-card__label">Ubicación</span>
+        <span class="contact-card__value">Terminal Pesquero Metropolitano<br>Lo Espejo, Santiago</span>
+      </div>
+      <div class="contact-card__row">
+        <span class="contact-card__label">Horarios</span>
+        <span class="contact-card__value">Venta de filete, entero o medallón<br>En el local o por despacho, de 9:00 a 15:00</span>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <span>© <span id="year"></span> La Pesca del Campeón · Terminal Pesquero Metropolitano, Santiago</span>
+    <span>Proveedor mayorista de pescados y mariscos para restaurantes</span>
+  </footer>
+</section>
+
+<script src="js/script.js"></script>
+</body>
+</html>

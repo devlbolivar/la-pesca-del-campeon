@@ -239,11 +239,25 @@
     }
     const video = wrap.querySelector('video');
     const source = video.querySelector('source');
+    // Belt-and-suspenders: some mobile browsers only honor the muted IDL
+    // property (not just the HTML attribute) when deciding whether to
+    // allow programmatic autoplay.
+    video.muted = true;
     source.src = source.dataset.src;
+    const tryPlay = () => video.play().catch(() => { });
     // play() right after load() can be rejected ("paused to save power") while
     // the video is still unbuffered — retry once it actually has data.
-    video.addEventListener('canplay', () => video.play().catch(() => { }));
+    video.addEventListener('canplay', tryPlay);
     video.load();
+    // iOS Low Power Mode (and some Android data-saver modes) block even
+    // muted autoplay until a user gesture — retry once on first touch/click.
+    const retryOnGesture = () => {
+      if (video.paused) tryPlay();
+      document.removeEventListener('touchstart', retryOnGesture);
+      document.removeEventListener('click', retryOnGesture);
+    };
+    document.addEventListener('touchstart', retryOnGesture, { once: true, passive: true });
+    document.addEventListener('click', retryOnGesture, { once: true });
   }
 
   // ---------- Routing (clean URLs via History API, no #hash) ----------

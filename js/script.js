@@ -227,13 +227,12 @@
     });
   }
 
-  // Skips the download entirely on mobile (bandwidth) and when the user
-  // prefers reduced motion — falls back to the plain gradient overlay.
+  // Skips the download when the user prefers reduced motion — falls back
+  // to the plain gradient overlay.
   function wireHeroVideo() {
     const wrap = document.querySelector('.hero__video-bg');
     if (!wrap) return;
-    const skip = window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
-      window.matchMedia('(max-width: 720px)').matches;
+    const skip = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (skip) {
       wrap.remove();
       return;

@@ -12,9 +12,9 @@
 
   // ---------- Content data ----------
   const SERVICES = [
-    { photo: 'Foto: maestro fileteando', image: 'filetador.jpg', title: 'Fileteado profesional', body: 'Maestros fileteadores con años en el terminal. Filete, medallón, trozado o entero limpio — al corte que pida tu cocina, listo para la plancha.' },
-    { photo: 'Foto: reparto / cajas con hielo', image: 'entrega.jpg', title: 'Entrega al por mayor', body: 'Volúmenes para restaurantes, casinos y hoteles. Pedido confirmado hoy, entregado mañana temprano en cadena de frío.' },
-    { photo: 'Foto: pescado fresco en el terminal', image: 'terminal.jpg', title: 'Pescado fresco del día', body: 'Compramos directo en el terminal cada madrugada. Sin intermediarios: del bote a nuestra sala de proceso, y de ahí a tu cocina.' }
+    { photo: 'Foto: maestro fileteando', image: 'filetador.jpg', alt: 'Maestro fileteador preparando pescado fresco en La Pesca del Campeón', title: 'Fileteado profesional', body: 'Maestros fileteadores con años en el terminal. Filete, medallón, trozado o entero limpio — al corte que pida tu cocina, listo para la plancha.' },
+    { photo: 'Foto: reparto / cajas con hielo', image: 'entrega.jpg', alt: 'Cajas de pescado y mariscos listas para despacho mayorista a restaurantes', title: 'Entrega al por mayor', body: 'Volúmenes para restaurantes, casinos y hoteles. Pedido confirmado hoy, entregado mañana temprano en cadena de frío.' },
+    { photo: 'Foto: pescado fresco en el terminal', image: 'terminal.jpg', alt: 'Pescado fresco del día en el Terminal Pesquero Metropolitano de Santiago', title: 'Pescado fresco del día', body: 'Compramos directo en el terminal cada madrugada. Sin intermediarios: del bote a nuestra sala de proceso, y de ahí a tu cocina.' }
   ];
 
   const STEPS = [
@@ -31,8 +31,7 @@
   // Species without photos yet fall back to imagePlaceholder(photo).
   const SPECIES = [
     { photo: 'Foto: reineta', name: 'Reineta', cuts: ['Filete', 'Entera'], images: { entero: 'reineta-entera.jpg', filete: 'reineta-filete.jpg' } },
-    { photo: 'Foto: merluza gayi', name: 'Merluza gayi', cuts: ['Filete', 'Medallón'], images: { entero: 'merluza-entera.jpg', filete: 'merluza-filete.jpg' } },
-    { photo: 'Foto: merluza austral', name: 'Merluza austral', cuts: ['Filete', 'Medallón'], images: { entero: 'merluza-entera.jpg', filete: 'merluza-filete.jpg' } },
+    { photo: 'Foto: merluza', name: 'Merluza', cuts: ['Filete', 'Medallón', 'Gayi', 'Austral'], images: { entero: 'merluza-entera.jpg', filete: 'merluza-filete.jpg' } },
     { photo: 'Foto: congrio', name: 'Congrio', cuts: ['Dorado', 'Colorado'], images: { entero: 'congrio-entero.jpg', medallon: 'congrio-medallones.jpg' } },
     { photo: 'Foto: róbalo', name: 'Róbalo', cuts: ['Filete', 'Entero'], images: { entero: 'robalo-entero.jpg', filete: 'robalo-filete.jpg' } },
     { photo: 'Foto: corvina', name: 'Corvina', cuts: ['Filete', 'Entera'], images: { entero: 'corvinas-entera.jpg' } },
@@ -93,7 +92,7 @@
     grid.replaceChildren(...SERVICES.map(s =>
       el('article', { class: 'card' }, [
         el('div', { class: 'card__media' },
-          s.image ? el('img', { src: `images/${s.image}`, alt: s.title, loading: 'lazy' }) : imagePlaceholder(s.photo)
+          s.image ? el('img', { src: `images/${s.image}`, alt: s.alt || s.title, loading: 'lazy' }) : imagePlaceholder(s.photo)
         ),
         el('div', { class: 'card__body' }, [
           el('h3', { class: 'card__title' }, s.title),
@@ -149,7 +148,8 @@
     }
 
     let idx = defaultImageIndex(entries);
-    const img = el('img', { src: `images/${entries[idx][1]}`, alt: sp.name, loading: 'lazy' });
+    const altFor = (key) => `${sp.name} ${(CUT_LABELS[key] || key).toLowerCase()} fresco, Terminal Pesquero Metropolitano`;
+    const img = el('img', { src: `images/${entries[idx][1]}`, alt: altFor(entries[idx][0]), loading: 'lazy' });
     const mediaChildren = [img];
 
     if (entries.length > 1) {
@@ -166,6 +166,7 @@
           e.preventDefault();
           idx = i;
           img.src = `images/${entries[idx][1]}`;
+          img.alt = altFor(entries[idx][0]);
           dotsWrap.querySelectorAll('.media-dot').forEach((d, di) => {
             d.classList.toggle('is-active', di === idx);
             d.setAttribute('aria-selected', String(di === idx));
@@ -242,13 +243,13 @@
     source.src = source.dataset.src;
     // play() right after load() can be rejected ("paused to save power") while
     // the video is still unbuffered — retry once it actually has data.
-    video.addEventListener('canplay', () => video.play().catch(() => {}));
+    video.addEventListener('canplay', () => video.play().catch(() => { }));
     video.load();
   }
 
   // ---------- Routing (clean URLs via History API, no #hash) ----------
   // Section id -> friendly path. "top" maps to the root "/" since it's the
-  // implicit landing state, not "/top".
+  // implicit landing state, not "/top". 
   const ROUTES = [
     { id: 'top', path: '/' },
     { id: 'servicios', path: '/servicios' },

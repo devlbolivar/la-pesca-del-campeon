@@ -80,7 +80,7 @@ img, svg { display: block; max-width: 100%; }
   border-bottom: 1px solid rgba(92, 184, 240, .18);
 }
 .nav__brand { display: flex; align-items: center; gap: 10px; color: var(--text); }
-.nav__logo { width: 48px; height: 48px; object-fit: contain; flex-shrink: 0; }
+.nav__logo { width: 60px; height: 60px; object-fit: contain; flex-shrink: 0; }
 .nav__title {
   font-family: var(--font-display); font-size: 17px; font-weight: 800;
   letter-spacing: .01em; white-space: nowrap; text-transform: uppercase;
@@ -262,6 +262,8 @@ img, svg { display: block; max-width: 100%; }
 .contact-card__value { font-size: 15.5px; line-height: 1.55; color: var(--text-muted-2); }
 .contact-card__value--link { font-size: 19px; font-weight: 700; color: var(--text); }
 .contact-card__value--link:hover { color: var(--blue-hover); }
+.contact-card__maps-link { font-size: 13.5px; font-weight: 600; }
+.contact-card__maps-link:hover { color: var(--blue-hover); }
 
 .footer {
   max-width: 1120px; margin: 64px auto 0; padding-top: 22px;

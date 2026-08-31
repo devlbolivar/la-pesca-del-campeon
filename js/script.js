@@ -23,25 +23,24 @@
     { num: 'PASO 3', title: 'Entrega', body: 'Retira en el local o coordina despacho, de 9:00 a 15:00, listo para tu cocina.' }
   ];
 
-  const FILTER_LABELS = ['Todos', 'Filete', 'Entero', 'Medallón'];
+  const FILTER_LABELS = ['Todos', 'Filete', 'Entero'];
 
   // `images` keys are normalized cut labels (see normalizeLabel) and point into images/.
   // Key order matters: it's also display order (see defaultImageIndex / speciesCard),
   // so "entero" is listed first whenever a whole-animal photo exists.
   // Species without photos yet fall back to imagePlaceholder(photo).
   const SPECIES = [
-    { photo: 'Foto: reineta', name: 'Reineta', cuts: ['Filete', 'Entera'], images: { entero: 'reineta-entera.jpg', filete: 'reineta-filete.jpg' } },
-    { photo: 'Foto: merluza', name: 'Merluza', cuts: ['Filete', 'Medallón', 'Gayi', 'Austral'], images: { entero: 'merluza-entera.jpg', filete: 'merluza-filete.jpg' } },
-    { photo: 'Foto: congrio', name: 'Congrio', cuts: ['Dorado', 'Colorado'], images: { entero: 'congrio-entero.jpg', medallon: 'congrio-medallones.jpg' } },
-    { photo: 'Foto: róbalo', name: 'Róbalo', cuts: ['Filete', 'Entero'], images: { entero: 'robalo-entero.jpg', filete: 'robalo-filete.jpg' } },
-    { photo: 'Foto: corvina', name: 'Corvina', cuts: ['Filete', 'Entera'], images: { entero: 'corvinas-entera.jpg' } },
-    { photo: 'Foto: cojinova', name: 'Cojinova', cuts: ['Filete', 'Entera'], images: { entero: 'cojinova-entera.jpg' } },
-    { photo: 'Foto: salmón', name: 'Salmón', cuts: ['Entero', 'Filete'], images: { entero: 'salmon-entero.jpg', filete: 'salmon-filete.jpg' } },
-    { photo: 'Foto: pulpo', name: 'Pulpo', cuts: ['Norteño', 'Sureño'], images: { entero: 'pulpo.jpg' } },
-    { photo: 'Foto: ostiones', name: 'Ostiones', cuts: ['Bandeja 10 un. media concha'], images: { entero: 'ostiones.jpg' } },
-    { photo: 'Foto: camarones', name: 'Camarones', cuts: ['Nacional', 'Ecuatoriano'], images: { entero: 'camarones.jpg' } },
-    { photo: 'Foto: calamar', name: 'Calamar', cuts: ['Anillo', 'Vaina'], images: { entero: 'calamar.jpg' } },
-    { photo: 'Foto: locos', name: 'Locos', cuts: ['Frescos', 'En conserva'], images: { entero: 'locos.jpg' } }
+    { photo: 'Foto: reineta', name: 'Reineta', cuts: ['Filete', 'Entera'], images: { entero: 'reineta-entera-2.jpeg', filete: 'reineta-filete.jpeg' } },
+    { photo: 'Foto: corvina', name: 'Corvina', cuts: ['Filete', 'Entera'], images: { entero: 'corvina.jpeg' } },
+    { photo: 'Foto: salmón', name: 'Salmón', cuts: ['Entero', 'Filete'], images: { filete: 'salmon-filete-trozo.jpeg' } },
+    { photo: 'Foto: pulpo', name: 'Pulpo', cuts: ['Norteño', 'Sureño'], images: { entero: 'pulpo-norte.jpeg' } },
+    { photo: 'Foto: ostiones', name: 'Ostiones', cuts: ['Bandeja 10 un. media concha'], images: { entero: 'ostiones.jpeg' } },
+    { photo: 'Foto: locos', name: 'Locos', cuts: ['Frescos', 'En conserva'], images: { entero: 'locos.jpeg' } },
+    { photo: 'Foto: bonito', name: 'Bonito', cuts: ['Entero'], images: { entero: 'bonito.jpeg' } },
+    { photo: 'Foto: erizo', name: 'Erizo', cuts: ['Pulpa fresca'], images: { entero: 'erizo.jpeg' } },
+    { photo: 'Foto: lapas', name: 'Lapas', cuts: ['Frescas'], images: { entero: 'lapas.jpeg' } },
+    { photo: 'Foto: jibia', name: 'Jibia', cuts: ['Tubo limpio'], images: { entero: 'jibia.jpeg' } },
+    { photo: 'Foto: antena', name: 'Antena', cuts: ['Fresca'], images: { entero: 'antena.jpeg' } }
   ];
 
   const STATS = [
